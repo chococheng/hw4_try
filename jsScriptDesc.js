@@ -49,8 +49,13 @@ var getApi=function(){
   FB.api(
     "/me/albums",//抓出使用者全部的albums
     function(response){
-      console.log(response);
-      console.log(response.name==="Profile Pictures");
+      console.log(response.data);
+      for(var i=0; i<response.data.length; i++){
+        if(response.data[i].name==="Profile Pictures"){
+          console.log(response.data[i]);
+        }
+      }
+      
       
 
     }
