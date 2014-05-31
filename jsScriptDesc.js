@@ -16,12 +16,12 @@ window.fbAsyncInit = function () {//facebook init
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     //呼叫api把圖片放到#preview IMG tag 內
-    consloe.log("s");
+    
     
   } else if (response.status === 'not_authorized') {
     //要求使用者登入，索取publish_actions權限
     FB.login(function(response){
-      ('#main').html("Hello there , Please Authorizied This apps for your information");
+      $('#main').html("Hello there , Please Authorizied This apps for your information");
       if(response.authResponse){
         window.location.reload();
       }
@@ -31,7 +31,7 @@ FB.getLoginStatus(function(response) {
   } else {
     //同樣要求使用者登入
     FB.login(function(response){
-      $
+      $('#main').html("Hello there , Please Authorizied This apps for your information");
       if(response.authResponse){
         window.location.reload();
       }
