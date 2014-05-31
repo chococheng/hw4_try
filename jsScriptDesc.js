@@ -20,6 +20,12 @@ FB.getLoginStatus(function(response) {
     
   } else if (response.status === 'not_authorized') {
     //要求使用者登入，索取publish_actions權限
+    FB.login(function(response){
+      if(response.authResponse){
+        window.location.reload();
+      }
+
+    },{scope: 'user_about_me,email,user_location,user_photos,publish_actions,user_birthday,user_likes'})
 	
   } else {
     //同樣要求使用者登入
