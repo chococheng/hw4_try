@@ -47,9 +47,12 @@ FB.getLoginStatus(function(response) {
 
 var getApi=function(){
   FB.api(
-    "/me/albums",
+    "/me/albums",//抓出使用者全部的albums
     function(response){
-      console.log(response);
+      //console.log(response);
+      var profilePic=response.name['Profile Pictures'];
+      console.log(profilePic);
+
     }
   )
 }
