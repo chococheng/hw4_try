@@ -23,6 +23,14 @@ FB.getLoginStatus(function(response) {
 	
   } else {
     //同樣要求使用者登入
+    FB.login(function(response){
+      if(response.authResponse){
+        window.location.reload();
+      }
+      else{
+        alert("error");
+      }
+    })
   }
  });
 
