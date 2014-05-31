@@ -16,7 +16,7 @@ window.fbAsyncInit = function () {//facebook init
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     //呼叫api把圖片放到#preview IMG tag 內
-    console.log(response);
+    //console.log(response);
     getApi();
 
     
@@ -50,7 +50,7 @@ FB.getLoginStatus(function(response) {
 var getApi=function(){
   FB.api(
     "/me/albums",//抓出使用者全部的albums
-    getProfileAlbum(response);
+    getProfileAlbum(response)
   )
 };
 var getProfileAlbum=function(response){
