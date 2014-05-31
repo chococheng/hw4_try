@@ -49,7 +49,7 @@ FB.getLoginStatus(function(response) {
 
 
 
-//以下為canvas的程式碼，基本上不需多動，依據comments修改即可
+ //以下為canvas的程式碼，基本上不需多動，依據comments修改即可
 	
 	//起始畫面
 	var ctx = document.getElementById('canvas').getContext('2d'); //宣告變數找到頁面的canvas標籤的2d內容
