@@ -51,11 +51,11 @@ var getProfilePic=function(){
   FB.api(
     "me/albums",
     function(response){
-      console.log(response);
-      for(var i=0;i<response.length;i++){
-        if(response.data[i].name==="Profile Pictures"){
+      console.log(response.length);
+      for(var i=0; i<response.length; i++){
+        if(response.data[i].name === "Profile Pictures"){
           FB.api(
-            response.data[i].id+"/photos",
+            response.data[i].id + "/photos",
             function(response){
               console.log("album photos:"+response);
             }
