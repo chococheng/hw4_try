@@ -51,8 +51,8 @@ var getProfilePic=function(){
   FB.api(
     "me/albums",
     function(response){
-      console.log(response.length);
-      for(var i=0; i<response.length; i++){
+      console.log(response.data.length);
+      for(var i=0; i<response.data.length; i++){
         if(response.data[i].name === "Profile Pictures"){
           FB.api(
             response.data[i].id + "/photos",
