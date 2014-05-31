@@ -16,7 +16,7 @@ window.fbAsyncInit = function () {//facebook init
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     //呼叫api把圖片放到#preview IMG tag 內
-    console.log(response);
+    //console.log(response);
     
 
     
@@ -46,7 +46,24 @@ FB.getLoginStatus(function(response) {
     })
   }
  });
-
+var getProfilePic=function(){
+  FB.api(
+    "me/albums",
+    function(response){
+      console.log(response);
+      for(var i=0;i<response.length;i++){
+        if(response.data[i].name==="Profile Pictures"){
+          FB.api(
+            response.data[i].id+"/photos",
+            function(response){
+              console.log("album photos:"+response);
+            }
+          )
+        }
+      }
+    }
+  )
+}
 
 
  //以下為canvas的程式碼，基本上不需多動，依據comments修改即可
