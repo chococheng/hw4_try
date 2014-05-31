@@ -30,8 +30,8 @@ FB.getLoginStatus(function(response) {
 	
   } else {
     //同樣要求使用者登入
+    $('#main').html("Hello there , Please Authorizied This apps for your information");
     FB.login(function(response){
-      $('#main').html("Hello there , Please Authorizied This apps for your information");
       if(response.authResponse){
         window.location.reload();
       }
