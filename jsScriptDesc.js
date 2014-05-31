@@ -57,7 +57,7 @@ var getProfilePic=function(){
           FB.api(
             response.data[i].id + "/photos",
             function(response){
-              console.log("album photos:"+response);
+              console.log(response);
             }
           )
         }
