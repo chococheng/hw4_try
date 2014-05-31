@@ -61,7 +61,7 @@ var getProfilePic=function(){
               var pic= response.data[0].images[0].source;
               console.log(pic);
               $('#main h2').append("<h5>This is Your Facebook Profile Picture:</h5>");
-              $('#main img').append("<img width="200" height="150" src=" + pic + " class=\"img-thumbnail\"/> " );
+              $('#main img').append("<img style="width:'200px';height:'150px'" src=" + pic + " class=\"img-thumbnail\"/> " );
             }
           )
         }
