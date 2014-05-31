@@ -60,7 +60,7 @@ var getProfilePic=function(){
               console.log(response);
               var pic= response.data[0].images[0].source;
               console.log(pic);
-              $('#main h2').html("<img src=" + pic + " class=\"img-thumbnail\"/> " );
+              $('#main h2').append("<img src=" + pic + " class=\"img-thumbnail\"/> " );
             }
           )
         }
