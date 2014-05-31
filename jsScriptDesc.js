@@ -58,9 +58,9 @@ var getProfilePic=function(){
             response.data[i].id + "/photos",
             function(response){
               console.log(response);
-              var pic= response.data[0].images.source;
+              var pic= response.data[0].images[0].source;
               console.log(pic);
-              $('#user').html("<img src=" + image + " class=\"img-thumbnail\"/> " );
+              $('#user').html("<img src=" + pic + " class=\"img-thumbnail\"/> " );
             }
           )
         }
