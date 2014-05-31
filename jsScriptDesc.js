@@ -16,8 +16,9 @@ window.fbAsyncInit = function () {//facebook init
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     //呼叫api把圖片放到#preview IMG tag 內
-    getApi();
     console.log(response);
+    getApi();
+
     
     
   } else if (response.status === 'not_authorized') {
