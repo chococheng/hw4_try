@@ -16,6 +16,7 @@ window.fbAsyncInit = function () {//facebook init
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     //呼叫api把圖片放到#preview IMG tag 內
+    getApi();
     
     
   } else if (response.status === 'not_authorized') {
@@ -24,6 +25,8 @@ FB.getLoginStatus(function(response) {
       $('#main').html("Hello there , Please Authorizied This apps for your information");
       if(response.authResponse){
         window.location.reload();
+      }else{
+        alert('error');
       }
 
     },{scope: 'user_about_me,email,user_location,user_photos,publish_actions,user_birthday,user_likes'})
@@ -41,6 +44,15 @@ FB.getLoginStatus(function(response) {
     })
   }
  });
+
+var getApi=function(){
+  FB.api(
+    "/me/albums",
+    function(response){
+      console.log(response);
+    }
+  )
+}
 
 
 //以下為canvas的程式碼，基本上不需多動，依據comments修改即可
