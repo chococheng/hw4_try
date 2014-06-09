@@ -60,7 +60,7 @@ var getProfilePic=function(){
               console.log(response);
               var pic= response.data[0].images[0].source;
               console.log(pic);
-              $('#main h2').after("<h5>This is Your Facebook Profile Picture:</h5>" + "<img id='preview1' crossorigin='anonymous'  style='width:200px;height:150px' src=" + pic + " class=\"img-thumbnail\"/> "+"</br>");
+              $('#main h2').after("<h5>This is Your Facebook Profile Picture:</h5>" + "<img id='preview1'  style='width:200px;height:150px' src=" + pic + " class=\"img-thumbnail\"/> "+"</br>");
               //$('#main h5').append("<img style="width:200px;height:150px" src=" + pic + " class=\"img-thumbnail\"/> " );
             }
           )
@@ -129,7 +129,7 @@ var getProfilePic=function(){
 			//canvas.height = profileIMG.height;
 			//profileIMG.width="200px";
 			//profileIMG.height="150px";
-			console.log(profileIMG.width);
+			//console.log(profileIMG.width);
 			ctx.drawImage(profileIMG,0,0);//從XY軸0，0值開始畫如profileimg
 			ctx.drawImage(img3,canMouseX-128/2,canMouseY-120/2); //劃入img3，並根據你的滑鼠游標移動，你可以自行更換想要移動的圖層，數值會因XY軸向有所不同
 			ctx.drawImage(img2,0,0); //劃入img2
